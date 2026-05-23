@@ -1,770 +1,749 @@
 <!DOCTYPE html>
 <html lang="pt-BR" class="scroll-smooth">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Anchor | Agência de Marketing de Performance</title>
-<!-- Tailwind CSS -->
-<script src="https://cdn.tailwindcss.com"></script>
-<!-- FontAwesome para Ícones -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<!-- Google Fonts: Inter e Outfit -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ANCHOOR | Estratégia que transforma marketing em crescimento real.</title>
+    <meta name="description" content="A ANCHOOR ajuda empresas a saírem do marketing sem direção para uma estratégia clara, posicionamento forte e resultados mensuráveis.">
+    
+    <!-- Fonts: Outfit (Display/Headings) & Inter (Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons (Lucide) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 
-<script>
-tailwind.config = {
-theme: {
-extend: {
-fontFamily: {
-sans: ['Inter', 'sans-serif'],
-display: ['Outfit', 'sans-serif'],
-},
-colors: {
-bgDark: '#050200',
-brand: {
-50: '#fff7ed',
-100: '#ffedd5',
-200: '#fed7aa',
-300: '#fdba74',
-400: '#fb923c',
-500: '#f97316',
-600: '#ea580c',
-700: '#c2410c',
-800: '#9a3412',
-900: '#7c2d12',
-}
-}
-}
-}
-}
-</script>
-<style>
-body {
-background-color: #050200;
-color: #d1d5db;
-overflow-x: hidden;
-}
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#fff4ed',
+                            100: '#ffebd5',
+                            500: '#f97316', // Laranja vibrante
+                            600: '#ea580c',
+                            900: '#7c2d12',
+                            950: '#431407',
+                        },
+                        dark: {
+                            900: '#0a0a0a',
+                            800: '#121212',
+                            700: '#1a1a1a',
+                        }
+                    },
+                    backgroundImage: {
+                        'radial-gradient': 'radial-gradient(var(--tw-gradient-stops))',
+                    }
+                }
+            }
+        }
+    </script>
 
-/* Efeitos Planetários de Luz (Cúpula Laranja) */
-.horizon-glow-top {
-position: absolute;
-top: -40vw;
-left: 50%;
-transform: translateX(-50%);
-width: 200vw;
-height: 80vw;
-background: radial-gradient(ellipse at bottom, rgba(234, 88, 12, 0.25) 0%, rgba(5, 2, 0, 0) 60%);
-border-bottom: 1px solid rgba(249, 115, 22, 0.2);
-border-radius: 100%;
-pointer-events: none;
-z-index: 0;
-box-shadow: 0 100px 150px -50px rgba(234, 88, 12, 0.15);
-}
+    <style>
+        /* Custom Styles for Premium Feel */
+        body {
+            background-color: #050505;
+            color: #ffffff;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
 
-.horizon-glow-bottom {
-position: absolute;
-bottom: -50vw;
-left: 50%;
-transform: translateX(-50%);
-width: 200vw;
-height: 70vw;
-background: radial-gradient(ellipse at top, rgba(234, 88, 12, 0.15) 0%, rgba(5, 2, 0, 0) 70%);
-border-top: 1px solid rgba(249, 115, 22, 0.15);
-border-radius: 100%;
-pointer-events: none;
-z-index: 0;
-}
+        .glass-nav {
+            background: rgba(5, 5, 5, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
 
-@media (min-width: 768px) {
-.horizon-glow-top { width: 150vw; height: 60vw; top: -40vw; }
-}
+        .glass-card {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
 
-/* Glassmorphism Cards */
-.card-dark {
-background: rgba(20, 10, 5, 0.5);
-backdrop-filter: blur(16px);
--webkit-backdrop-filter: blur(16px);
-border: 1px solid rgba(249, 115, 22, 0.15);
-transition: all 0.3s ease;
-}
+        .glass-card:hover {
+            border-color: rgba(249, 115, 22, 0.3);
+            background: rgba(255, 255, 255, 0.04);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px -10px rgba(249, 115, 22, 0.15);
+        }
 
-.card-dark:hover {
-border-color: rgba(249, 115, 22, 0.3);
-background: rgba(20, 10, 5, 0.7);
-box-shadow: 0 10px 30px -10px rgba(234, 88, 12, 0.15);
-}
+        .text-glow {
+            text-shadow: 0 0 30px rgba(249, 115, 22, 0.4);
+        }
 
-/* Campos de Formulário com profundidade */
-.form-input {
-background-color: #000000;
-border: 1px solid rgba(255, 255, 255, 0.1);
-color: #ffffff;
-transition: all 0.3s ease;
-box-shadow: inset 0 2px 4px rgba(0,0,0,0.5);
-}
-.form-input:focus {
-border-color: #ea580c;
-box-shadow: inset 0 2px 4px rgba(0,0,0,0.5), 0 0 0 2px rgba(234, 88, 12, 0.2);
-outline: none;
-}
+        .bg-glow-orange {
+            position: absolute;
+            width: 100vw;
+            max-width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(249,115,22,0.15) 0%, rgba(0,0,0,0) 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 0;
+            filter: blur(60px);
+        }
 
-/* Botões */
-.btn-primary {
-background-color: #ea580c;
-color: #ffffff;
-transition: all 0.3s ease;
-box-shadow: 0 0 20px rgba(234, 88, 12, 0.4);
-}
-.btn-primary:hover {
-background-color: #f97316;
-box-shadow: 0 0 30px rgba(249, 115, 22, 0.6);
-transform: translateY(-2px);
-}
+        /* Scroll Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
-.btn-outline {
-background-color: rgba(255,255,255,0.05);
-border: 1px solid rgba(255,255,255,0.1);
-color: #ffffff;
-transition: all 0.3s ease;
-}
-.btn-outline:hover {
-background-color: rgba(255,255,255,0.1);
-border-color: rgba(255,255,255,0.3);
-}
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
 
-/* Truque para deixar o iframe do Google Maps no Modo Escuro */
-.map-dark-mode {
-filter: invert(100%) hue-rotate(180deg) brightness(90%) contrast(90%) grayscale(20%);
--webkit-filter: invert(100%) hue-rotate(180deg) brightness(90%) contrast(90%) grayscale(20%);
-}
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #050505; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #262626; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #f97316; 
+        }
 
-/* Filtro da foto dos fundadores (Cores Originais mantidas, apenas fade no rodapé) */
-.founders-photo {
-/* Removido o filter: sepia e mix-blend-mode: luminosity para manter as cores originais */
-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
--webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
-object-position: top center;
-}
+        /* Form Inputs */
+        .input-premium {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
+        }
+        .input-premium:focus {
+            outline: none;
+            border-color: #f97316;
+            background: rgba(249,115,22,0.05);
+            box-shadow: 0 0 0 1px rgba(249,115,22,0.5);
+        }
 
-/* WhatsApp Flutuante Pulse */
-@keyframes pulse-whatsapp {
-0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
-100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
-}
-.whatsapp-float {
-animation: pulse-whatsapp 2s infinite;
-}
-
-/* Accordion transition */
-.faq-content {
-transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out;
-max-height: 0;
-opacity: 0;
-overflow: hidden;
-}
-.faq-content.open {
-max-height: 500px;
-opacity: 1;
-}
-
-::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: #050200; }
-::-webkit-scrollbar-thumb { background: #ea580c; border-radius: 4px; }
-</style>
+        /* Hero Animation */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+    </style>
 </head>
 <body class="antialiased selection:bg-brand-500 selection:text-white">
 
-<!-- Efeito do Horizonte de Luz Topo -->
-<div class="horizon-glow-top"></div>
-
-<!-- Navegação -->
-<nav class="fixed w-full z-50 transition-all duration-300 border-b border-transparent" id="navbar">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="flex justify-between h-20 items-center">
-<!-- Logo -->
-<div class="flex items-center cursor-pointer group" onclick="window.scrollTo(0,0)">
-<svg viewBox="0 0 100 100" class="w-8 h-8 mr-2 drop-shadow-[0_0_8px_rgba(234,88,12,0.6)]">
-<defs>
-<linearGradient id="anchorGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-<stop offset="0%" stop-color="#fb923c" />
-<stop offset="50%" stop-color="#ea580c" />
-<stop offset="100%" stop-color="#9a3412" />
-</linearGradient>
-</defs>
-<path fill-rule="evenodd" d="M 50 5 L 95 95 L 5 95 Z M 50 35 L 72 70 L 60 70 L 60 95 L 40 95 L 40 70 L 28 70 Z" fill="url(#anchorGrad)"/>
-</svg>
-<span class="font-display font-bold text-xl tracking-wide text-white">Anchor</span>
-</div>
-
-<!-- Desktop Menu -->
-<div class="hidden lg:flex space-x-8 items-center text-sm font-medium">
-<a href="#inicio" class="text-gray-300 hover:text-white transition-colors">Início</a>
-<a href="#fundadores" class="text-gray-300 hover:text-white transition-colors">A Agência</a>
-<a href="#solucoes" class="text-gray-300 hover:text-white transition-colors">Soluções</a>
-<a href="#depoimentos" class="text-gray-300 hover:text-white transition-colors">Resultados</a>
-<a href="#faq" class="text-gray-300 hover:text-white transition-colors">Dúvidas Frequentes</a>
-</div>
-
-<div class="hidden lg:flex">
-<a href="#localizacao" class="btn-primary px-5 py-2 rounded-full font-medium text-sm">Começar Agora</a>
-</div>
-
-<!-- Mobile Menu Button -->
-<div class="lg:hidden flex items-center">
-<button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none p-2">
-<i class="fa-solid fa-bars text-2xl"></i>
-</button>
-</div>
-</div>
-</div>
-
-<!-- Mobile Menu Panel -->
-<div id="mobile-menu" class="hidden lg:hidden bg-[#0a0502] border-b border-brand-500/20 absolute w-full shadow-2xl">
-<div class="px-4 pt-2 pb-6 space-y-2">
-<a href="#inicio" class="block px-4 py-3 rounded-md text-base text-gray-300 hover:text-white hover:bg-brand-500/10">Início</a>
-<a href="#fundadores" class="block px-4 py-3 rounded-md text-base text-gray-300 hover:text-white hover:bg-brand-500/10">A Agência</a>
-<a href="#solucoes" class="block px-4 py-3 rounded-md text-base text-gray-300 hover:text-white hover:bg-brand-500/10">Soluções</a>
-<a href="#depoimentos" class="block px-4 py-3 rounded-md text-base text-gray-300 hover:text-white hover:bg-brand-500/10">Resultados</a>
-<a href="#faq" class="block px-4 py-3 rounded-md text-base text-gray-300 hover:text-white hover:bg-brand-500/10">Dúvidas Frequentes</a>
-<a href="#localizacao" class="block px-4 py-3 mt-4 text-center rounded-full text-base font-bold btn-primary">Contato & QG</a>
-</div>
-</div>
-</nav>
-
-<!-- Hero Section -->
-<section id="inicio" class="relative pt-32 pb-20 md:pt-40 md:pb-32 min-h-[90vh] flex flex-col justify-center items-center text-center px-4 z-10">
-<div class="inline-flex items-center space-x-2 bg-brand-900/30 border border-brand-500/30 rounded-full px-4 py-2 md:py-1.5 mb-6 md:mb-8 backdrop-blur-sm cursor-pointer hover:bg-brand-900/50 transition-colors">
-<span class="flex h-2 w-2 relative">
-<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-75"></span>
-<span class="relative inline-flex rounded-full h-2 w-2 bg-brand-500"></span>
-</span>
-<span class="text-brand-200 text-xs md:text-sm font-medium tracking-wide">Estratégias de Growth Validadas. Saiba mais <i class="fa-solid fa-arrow-right ml-1"></i></span>
-</div>
-
-<h1 class="font-display text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] xl:text-[5rem] font-bold text-white mb-6 leading-tight tracking-tight max-w-5xl mx-auto">
-Acelere Suas Vendas Com <br class="hidden sm:block"/>
-<span class="text-brand-500">Tráfego de Alta Performance</span>
-</h1>
-
-<p class="text-base sm:text-lg md:text-xl text-gray-400 mb-8 md:mb-10 max-w-2xl mx-auto font-light px-2">
-Não fazemos posts bonitinhos. Empoderamos sua equipe de vendas, escalamos suas campanhas de anúncios e maximizamos sua receita de forma agressiva.
-</p>
-
-<div class="flex flex-col sm:flex-row gap-4 justify-center items-center w-full max-w-md sm:max-w-none mx-auto">
-<a href="#localizacao" class="btn-primary w-full sm:w-auto px-8 py-4 md:py-3.5 rounded-full font-semibold flex items-center justify-center text-base">
-Quero Escalar Minha Empresa
-</a>
-<a href="#solucoes" class="btn-outline w-full sm:w-auto px-8 py-4 md:py-3.5 rounded-full font-semibold flex items-center justify-center text-base">
-<i class="fa-solid fa-play mr-2 text-brand-400"></i> Ver Nossas Soluções
-</a>
-</div>
-
-<div class="mt-16 md:mt-20 pt-8 md:pt-10 border-t border-white/5 w-full max-w-4xl mx-auto">
-<p class="text-xs text-gray-500 uppercase tracking-widest mb-6">Empresas que confiam no tráfego da Anchor</p>
-<div class="flex flex-wrap justify-center items-center gap-6 md:gap-16 opacity-40 grayscale hover:grayscale-0 transition-all duration-500">
-<div class="flex items-center text-white text-base md:text-lg font-display font-bold"><i class="fa-solid fa-cube mr-2 text-xl md:text-2xl"></i> BlockCorp</div>
-<div class="flex items-center text-white text-base md:text-lg font-display font-bold"><i class="fa-solid fa-bolt mr-2 text-xl md:text-2xl"></i> BoltShift</div>
-<div class="flex items-center text-white text-base md:text-lg font-display font-bold"><i class="fa-solid fa-globe mr-2 text-xl md:text-2xl"></i> GlobalBank</div>
-</div>
-</div>
-</section>
-
-<!-- Fundadores / Por que Nós? -->
-<section id="fundadores" class="py-16 md:py-24 relative z-10">
-<div class="absolute left-0 top-1/2 -translate-y-1/2 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-brand-600/10 rounded-full blur-[100px] pointer-events-none"></div>
-
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="text-center mb-12 md:mb-16">
-<h2 class="font-display text-4xl md:text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-b from-brand-300 to-brand-600 uppercase tracking-tight leading-none pb-2">
-Por que nos contratar?
-</h2>
-<p class="mt-4 text-gray-400 max-w-2xl mx-auto text-base md:text-lg">Não somos apenas uma agência. Somos a extensão comercial do seu negócio.</p>
-</div>
-
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-12 items-center">
-<!-- Imagem Responsiva (AGORA COM AS CORES ORIGINAIS) -->
-<div class="relative flex justify-center order-2 lg:order-1 px-4 sm:px-0">
-<div class="absolute inset-0 bg-gradient-to-t from-bgDark to-brand-600/20 rounded-[2rem] blur-xl transform scale-95"></div>
-
-<div class="relative w-full max-w-lg rounded-[2rem] overflow-hidden border border-brand-500/20 bg-[#120703]">
-<!-- TODO: Substitua o link abaixo pela foto real de vocês -->
-<img src="Img/IMG_7726.jpeg" alt="Fundadores da Anchor" class="w-full h-auto object-cover founders-photo" />
-
-<div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-[#050200] to-transparent">
-<div class="flex items-center space-x-3">
-<svg viewBox="0 0 100 100" class="w-6 h-6 flex-shrink-0">
-<path fill-rule="evenodd" d="M 50 5 L 95 95 L 5 95 Z M 50 35 L 72 70 L 60 70 L 60 95 L 40 95 L 40 70 L 28 70 Z" fill="#f97316"/>
-</svg>
-<span class="font-display font-bold text-white tracking-widest text-xs md:text-sm uppercase leading-tight">Estratégia • Execução • Resultado</span>
-</div>
-</div>
-</div>
-</div>
-
-<div class="order-1 lg:order-2 space-y-6 md:space-y-8">
-<p class="text-lg md:text-xl text-gray-300 leading-relaxed font-light text-center md:text-left">
-Você já deve ter contratado alguém antes. Talvez tenha funcionado. Talvez não. A <strong class="text-white font-medium">Anchor</strong> nasceu para empresários que não têm tempo a perder com métricas de vaidade.
-</p>
-
-<div class="space-y-4 md:space-y-6">
-<div class="card-dark p-5 md:p-6 rounded-2xl flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-4">
-<div class="flex-shrink-0 w-12 h-12 rounded-full bg-brand-500/10 flex items-center justify-center border border-brand-500/30">
-<span class="text-brand-500 font-bold text-lg">1</span>
-</div>
-<div>
-<h4 class="text-white font-display font-bold text-xl mb-2">Estratégia Sob Medida</h4>
-<p class="text-gray-400 text-sm">Analisamos seu negócio a fundo antes de investir um único centavo em anúncios. Compramos dados com inteligência.</p>
-</div>
-</div>
-
-<div class="card-dark p-5 md:p-6 rounded-2xl flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-4">
-<div class="flex-shrink-0 w-12 h-12 rounded-full bg-brand-500/10 flex items-center justify-center border border-brand-500/30">
-<span class="text-brand-500 font-bold text-lg">2</span>
-</div>
-<div>
-<h4 class="text-white font-display font-bold text-xl mb-2">Execução Implacável</h4>
-<p class="text-gray-400 text-sm">Criamos campanhas no Google e Meta Ads, landing pages e copys agressivas focadas 100% em conversão e captação de leads.</p>
-</div>
-</div>
-
-<div class="card-dark p-5 md:p-6 rounded-2xl flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-4">
-<div class="flex-shrink-0 w-12 h-12 rounded-full bg-brand-500/10 flex items-center justify-center border border-brand-500/30">
-<span class="text-brand-500 font-bold text-lg">3</span>
-</div>
-<div>
-<h4 class="text-white font-display font-bold text-xl mb-2">Resultados Escaláveis</h4>
-<p class="text-gray-400 text-sm">Deseja ter previsibilidade de vendas? Nosso foco absoluto é o Retorno sobre Investimento (ROI) para colocar dinheiro no seu caixa.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-
-<!-- Soluções -->
-<section id="solucoes" class="py-16 md:py-24 relative z-10 border-t border-white/5 bg-[#070301]">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="text-center mb-12 md:mb-16">
-<span class="text-brand-500 font-semibold tracking-wider text-xs md:text-sm uppercase bg-brand-500/10 px-3 py-1 rounded-full border border-brand-500/20">Nosso Arsenal</span>
-<h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white mt-4 mb-4">Mecânicas de Tração para seu Negócio</h2>
-<p class="text-gray-400 text-base md:text-lg max-w-2xl mx-auto">Tudo que sua empresa precisa para se destacar digitalmente e esmagar a concorrência.</p>
-</div>
-
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-<div class="card-dark p-8 rounded-3xl group relative overflow-hidden flex flex-col">
-<div class="absolute top-0 right-0 w-32 h-32 bg-brand-500/10 rounded-full blur-2xl group-hover:bg-brand-500/20 transition-all"></div>
-<div class="w-12 h-12 bg-white/5 rounded-xl border border-white/10 flex items-center justify-center mb-6 text-brand-400 text-xl group-hover:scale-110 transition-transform">
-<i class="fa-solid fa-bullseye"></i>
-</div>
-<h3 class="text-white font-display font-bold text-2xl mb-3">Tráfego Pago (Ads)</h3>
-<p class="text-gray-400 text-sm flex-grow">Gestão avançada de Meta Ads, Google Ads e TikTok Ads. Não dependa de indicação, compre previsibilidade de clientes.</p>
-</div>
-
-<div class="card-dark p-8 rounded-3xl group relative overflow-hidden border-brand-500/30 flex flex-col">
-<div class="absolute inset-0 bg-gradient-to-b from-brand-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-<div class="w-12 h-12 bg-brand-500/20 rounded-xl border border-brand-500/30 flex items-center justify-center mb-6 text-brand-400 text-xl group-hover:scale-110 transition-transform">
-<i class="fa-solid fa-layer-group"></i>
-</div>
-<h3 class="text-white font-display font-bold text-2xl mb-3">Funil e Landing Pages</h3>
-<p class="text-gray-400 text-sm flex-grow">Construímos páginas projetadas por especialistas em neuromarketing para converter visitantes frios em compradores ansiosos.</p>
-</div>
-
-<div class="card-dark p-8 rounded-3xl group relative overflow-hidden flex flex-col">
-<div class="absolute top-0 right-0 w-32 h-32 bg-brand-500/10 rounded-full blur-2xl group-hover:bg-brand-500/20 transition-all"></div>
-<div class="w-12 h-12 bg-white/5 rounded-xl border border-white/10 flex items-center justify-center mb-6 text-brand-400 text-xl group-hover:scale-110 transition-transform">
-<i class="fa-solid fa-chart-line"></i>
-</div>
-<h3 class="text-white font-display font-bold text-2xl mb-3">Consultoria de Vendas</h3>
-<p class="text-gray-400 text-sm flex-grow">Ajudamos a sua equipe comercial a fechar os leads que o tráfego gera, otimizando scripts e processos de CRM.</p>
-</div>
-</div>
-</div>
-</section>
-
-<!-- Depoimentos de Clientes -->
-<section id="depoimentos" class="py-16 md:py-24 relative z-10 border-t border-white/5">
-<div class="absolute right-0 top-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-brand-600/5 rounded-full blur-[100px] pointer-events-none"></div>
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="text-center mb-12 md:mb-16">
-<span class="text-brand-500 font-semibold tracking-wider text-xs md:text-sm uppercase bg-brand-500/10 px-3 py-1 rounded-full border border-brand-500/20">A Prova</span>
-<h2 class="font-display text-3xl md:text-5xl font-bold text-white mt-4 mb-4">Empresários que Fecharam Conosco</h2>
-<p class="text-gray-400 text-base md:text-lg max-w-2xl mx-auto">Resultados reais de quem decidiu parar de tentar e começou a escalar com o método Anchor.</p>
-</div>
-
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-<!-- Depoimento 1 -->
-<div class="card-dark p-8 rounded-3xl relative">
-<i class="fa-solid fa-quote-right absolute top-6 right-6 text-brand-500/10 text-5xl"></i>
-<div class="flex text-brand-500 text-sm mb-4">
-<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-</div>
-<p class="text-gray-300 text-sm italic mb-6 relative z-10">"Sempre fui desconfiado com agências. A Anchor provou com números. Em 3 meses, o volume de orçamentos da minha clínica triplicou, e o custo por lead caiu pela metade."</p>
-<div class="flex items-center mt-auto">
-<div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mr-4 font-bold text-white uppercase overflow-hidden">
-<img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Cliente" class="w-full h-full object-cover">
-</div>
-<div>
-<h4 class="text-white font-bold text-sm">Ricardo S.</h4>
-<p class="text-brand-400 text-xs">Clínica Odontológica</p>
-</div>
-</div>
-</div>
-
-<!-- Depoimento 2 -->
-<div class="card-dark p-8 rounded-3xl relative border-brand-500/30">
-<i class="fa-solid fa-quote-right absolute top-6 right-6 text-brand-500/10 text-5xl"></i>
-<div class="flex text-brand-500 text-sm mb-4">
-<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-</div>
-<p class="text-gray-300 text-sm italic mb-6 relative z-10">"Minha esposa achava que investir em tráfego era jogar dinheiro fora, porque tentamos antes e deu errado. A Anchor mudou nosso jogo. Batemos recorde de faturamento no Black Friday."</p>
-<div class="flex items-center mt-auto">
-<div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mr-4 font-bold text-white uppercase overflow-hidden">
-<img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Cliente" class="w-full h-full object-cover">
-</div>
-<div>
-<h4 class="text-white font-bold text-sm">Marcos e Ana</h4>
-<p class="text-brand-400 text-xs">E-commerce de Moda</p>
-</div>
-</div>
-</div>
-
-<!-- Depoimento 3 -->
-<div class="card-dark p-8 rounded-3xl relative">
-<i class="fa-solid fa-quote-right absolute top-6 right-6 text-brand-500/10 text-5xl"></i>
-<div class="flex text-brand-500 text-sm mb-4">
-<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-</div>
-<p class="text-gray-300 text-sm italic mb-6 relative z-10">"O atendimento deles é direto ao ponto. Paramos de nos preocupar em atrair clientes e passamos a nos preocupar apenas em atender o volume de leads qualificados que chega no WhatsApp."</p>
-<div class="flex items-center mt-auto">
-<div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mr-4 font-bold text-white uppercase overflow-hidden">
-<img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Cliente" class="w-full h-full object-cover">
-</div>
-<div>
-<h4 class="text-white font-bold text-sm">Felipe M.</h4>
-<p class="text-brand-400 text-xs">Escritório de Advocacia</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-
-<!-- FAQ (Dúvidas de Sócios e Esposas/Maridos) -->
-<section id="faq" class="py-16 md:py-24 relative z-10 border-t border-white/5 bg-[#060200]">
-<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="text-center mb-12 md:mb-16">
-<span class="text-brand-500 font-semibold tracking-wider text-xs md:text-sm uppercase bg-brand-500/10 px-3 py-1 rounded-full border border-brand-500/20">Jogo Aberto</span>
-<h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white mt-4 mb-4">Dúvidas Comuns na Hora de Fechar</h2>
-<p class="text-gray-400 text-base md:text-lg max-w-2xl mx-auto">Entendemos que investir dinheiro da empresa envolve decisões com sócios ou parceiros de vida. Respostas francas para preocupações reais.</p>
-</div>
-
-<div class="space-y-4">
-<!-- Pergunta 1 -->
-<div class="card-dark rounded-2xl border border-white/10 overflow-hidden">
-<button class="w-full text-left px-6 py-5 flex justify-between items-center focus:outline-none faq-btn">
-<span class="font-display font-bold text-white text-base md:text-lg pr-4">"É seguro investir isso ou é só mais um gasto pro nosso caixa?"</span>
-<i class="fa-solid fa-plus text-brand-500 transition-transform duration-300 flex-shrink-0"></i>
-</button>
-<div class="faq-content bg-black/40 px-6">
-<p class="text-gray-400 text-sm md:text-base pb-6 pt-2">Nós não vemos marketing como despesa fixa, mas como uma <strong class="text-brand-400">máquina de vendas</strong>. Nossa meta ao montar seu funil é que para cada R$ 1 investido, voltem R$ 3, R$ 5 ou R$ 10. Você terá acesso a dashboards transparentes para provar exatamente para onde cada centavo foi e quanto retornou.</p>
-</div>
-</div>
-
-<!-- Pergunta 2 -->
-<div class="card-dark rounded-2xl border border-white/10 overflow-hidden">
-<button class="w-full text-left px-6 py-5 flex justify-between items-center focus:outline-none faq-btn">
-<span class="font-display font-bold text-white text-base md:text-lg pr-4">"Nós mesmos podemos fazer posts para economizar. Por que terceirizar?"</span>
-<i class="fa-solid fa-plus text-brand-500 transition-transform duration-300 flex-shrink-0"></i>
-</button>
-<div class="faq-content bg-black/40 px-6">
-<p class="text-gray-400 text-sm md:text-base pb-6 pt-2">O tempo que vocês gastam aprendendo ferramentas complexas e tentando adivinhar como o algoritmo funciona, é o tempo que perdem focando no que realmente importa: a gestão da empresa e a entrega do serviço. Delegar para especialistas significa comprar tempo e resultados mais previsíveis.</p>
-</div>
-</div>
-
-<!-- Pergunta 3 -->
-<div class="card-dark rounded-2xl border border-white/10 overflow-hidden">
-<button class="w-full text-left px-6 py-5 flex justify-between items-center focus:outline-none faq-btn">
-<span class="font-display font-bold text-white text-base md:text-lg pr-4">"Já nos frustramos com outras agências. Como sei que não vou me decepcionar?"</span>
-<i class="fa-solid fa-plus text-brand-500 transition-transform duration-300 flex-shrink-0"></i>
-</button>
-<div class="faq-content bg-black/40 px-6">
-<p class="text-gray-400 text-sm md:text-base pb-6 pt-2">Agências convencionais vendem "curtidas" e "posts bonitos" que não pagam boleto. A Anchor é focada em performance comercial. Nossa entrega final são leads quentes no seu WhatsApp ou vendas no seu site. Só fazemos projetos onde enxergamos real capacidade de escala.</p>
-</div>
-</div>
-
-<!-- Pergunta 4 -->
-<div class="card-dark rounded-2xl border border-white/10 overflow-hidden">
-<button class="w-full text-left px-6 py-5 flex justify-between items-center focus:outline-none faq-btn">
-<span class="font-display font-bold text-white text-base md:text-lg pr-4">"Se não der resultado logo no primeiro mês, nós perdemos dinheiro?"</span>
-<i class="fa-solid fa-plus text-brand-500 transition-transform duration-300 flex-shrink-0"></i>
-</button>
-<div class="faq-content bg-black/40 px-6">
-<p class="text-gray-400 text-sm md:text-base pb-6 pt-2">Papo reto: o tráfego pago leva algumas semanas para maturar os dados. O primeiro mês é de testes intensivos e ajustes no funil. O ganho real e escalável começa a aparecer de forma consistente no segundo e terceiro mês. É uma construção sólida e não uma aposta lotérica.</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-
-<!-- Localização & Form (Com redirecionamento para o WhatsApp) -->
-<section id="localizacao" class="py-16 md:py-24 relative z-10 border-t border-white/5 bg-[#080301]">
-<div class="absolute bottom-0 right-0 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-brand-600/5 rounded-full blur-[100px] pointer-events-none"></div>
-
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-
-<div class="text-center mb-12 md:mb-16">
-<h2 class="font-display text-4xl md:text-5xl font-bold text-white mb-4">Pronto para dar o próximo passo?</h2>
-<p class="text-gray-400 max-w-2xl mx-auto text-base md:text-lg">Preencha o formulário para uma auditoria estratégica. Os dados serão enviados diretamente para nossa equipe.</p>
-</div>
-
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-10">
-
-<!-- Esquerda: Informações da Agência e MAPA -->
-<div class="lg:col-span-5 space-y-6">
-<div class="card-dark p-6 md:p-8 rounded-3xl border border-brand-500/20 h-full flex flex-col">
-<h3 class="text-xl md:text-2xl font-display font-bold text-white mb-6 flex items-center">
-<i class="fa-solid fa-location-crosshairs text-brand-500 mr-3"></i> Nosso QG Estratégico
-</h3>
-
-<div class="space-y-5 mb-8 flex-grow">
-<div class="flex items-start">
-<div class="w-10 h-10 rounded-full bg-brand-500/10 flex items-center justify-center mr-4 flex-shrink-0 border border-brand-500/20">
-<i class="fa-solid fa-map-location-dot text-brand-400"></i>
-</div>
-<div>
-<p class="text-white font-medium mb-1">Onde as campanhas nascem</p>
-<p class="text-gray-400 text-sm leading-relaxed">Av. Paulista, 1374 - Bela Vista<br>São Paulo - SP, 01310-100</p>
-</div>
-</div>
-
-<div class="flex items-start">
-<div class="w-10 h-10 rounded-full bg-brand-500/10 flex items-center justify-center mr-4 flex-shrink-0 border border-brand-500/20">
-<i class="fa-solid fa-envelope text-brand-400"></i>
-</div>
-<div>
-<p class="text-white font-medium mb-1">Contato Direto</p>
-<p class="text-gray-400 text-sm">projetos@anchor.com.br</p>
-</div>
-</div>
-</div>
-
-<!-- MAPA DO GOOGLE (Com filtro Dark Mode embutido no CSS) -->
-<div class="w-full h-48 md:h-56 rounded-2xl overflow-hidden border border-white/10 relative mt-auto">
-<iframe
-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.106696296001!2d-46.65496122369246!3d-23.564611161706692!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da7b4415%3A0xc47253a6a978f561!2sAv.%20Paulista%2C%201374%20-%20Bela%20Vista%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2001310-100!5e0!3m2!1spt-BR!2sbr!4v1714578129000!5m2!1spt-BR!2sbr"
-class="w-full h-full border-0 map-dark-mode"
-allowfullscreen=""
-loading="lazy"
-referrerpolicy="no-referrer-when-downgrade">
-</iframe>
-<div class="absolute inset-0 bg-brand-600/10 pointer-events-none mix-blend-color"></div>
-</div>
-</div>
-</div>
-
-<!-- Direita: Formulário Refinado (LIMPO e envia pro Whats) -->
-<div class="lg:col-span-7">
-<div class="card-dark p-6 md:p-10 rounded-3xl relative overflow-hidden border border-brand-500/20 shadow-2xl h-full bg-[#120804]">
-
-<div class="mb-8 relative z-10 border-b border-white/10 pb-6">
-<h3 class="font-display text-xl md:text-2xl font-bold text-white mb-2">Aplicação para Parceria</h3>
-<p class="text-gray-400 text-sm">Preencha os dados e receba nosso contato direto no WhatsApp.</p>
-</div>
-
-<form id="contactForm" class="space-y-6 relative z-10">
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-<div>
-<label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2 ml-1">Seu Nome / Empresa</label>
-<input type="text" id="nome" required placeholder="Ex: João Silva" class="form-input w-full px-5 py-3.5 rounded-xl placeholder-gray-600 text-sm">
-</div>
-<div>
-<label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2 ml-1">E-mail Corporativo</label>
-<input type="email" id="email" required placeholder="joao@empresa.com.br" class="form-input w-full px-5 py-3.5 rounded-xl placeholder-gray-600 text-sm">
-</div>
-</div>
-
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-<div>
-<label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2 ml-1">WhatsApp</label>
-<input type="tel" id="telefone" required placeholder="(11) 90000-0000" class="form-input w-full px-5 py-3.5 rounded-xl placeholder-gray-600 text-sm">
-</div>
-<div>
-<label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2 ml-1">Verba Mensal de Ads</label>
-<select id="investimento" required class="form-input w-full px-5 py-3.5 rounded-xl text-gray-300 text-sm appearance-none cursor-pointer">
-<option value="" disabled selected>Selecione uma faixa...</option>
-<option value="1">Até R$ 5.000 / mês</option>
-<option value="2">R$ 5k a R$ 20k / mês</option>
-<option value="3">Acima de R$ 20.000 / mês</option>
-</select>
-</div>
-</div>
-
-<div>
-<label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2 ml-1">Desafio de Marketing</label>
-<textarea id="mensagem" rows="3" required placeholder="Ex: Precisamos captar leads mais qualificados..." class="form-input w-full px-5 py-3.5 rounded-xl placeholder-gray-600 resize-none text-sm"></textarea>
-</div>
-
-<div class="pt-4 mt-2">
-<button type="submit" class="w-full btn-primary font-bold py-4 px-4 rounded-xl transition-all text-base md:text-[0.95rem] flex items-center justify-center">
-Enviar Aplicação e Iniciar Chat <i class="fa-solid fa-arrow-trend-up ml-2"></i>
-</button>
-</div>
-</form>
-</div>
-</div>
-
-</div>
-</div>
-</section>
-
-<!-- Footer & Cúpula Base -->
-<footer class="relative pt-24 md:pt-32 pb-10 overflow-hidden bg-[#050200]">
-<div class="horizon-glow-bottom"></div>
-
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-<div class="flex flex-col md:flex-row justify-between items-center border-b border-white/10 pb-8 md:pb-10 mb-8 md:mb-10 text-center md:text-left">
-<div class="flex flex-col md:flex-row items-center mb-6 md:mb-0">
-<svg viewBox="0 0 100 100" class="w-8 h-8 md:mr-2 mb-2 md:mb-0 drop-shadow-[0_0_8px_rgba(234,88,12,0.4)]">
-<path fill-rule="evenodd" d="M 50 5 L 95 95 L 5 95 Z M 50 35 L 72 70 L 60 70 L 60 95 L 40 95 L 40 70 L 28 70 Z" fill="#f97316"/>
-</svg>
-<span class="font-display font-bold text-2xl text-white tracking-wide">Anchor</span>
-</div>
-
-<div class="flex flex-wrap justify-center space-x-4 md:space-x-6 text-xs md:text-sm font-medium">
-<a href="#solucoes" class="text-gray-400 hover:text-white transition-colors mb-2">Estratégias</a>
-<a href="#depoimentos" class="text-gray-400 hover:text-white transition-colors mb-2">Resultados</a>
-<a href="#faq" class="text-gray-400 hover:text-white transition-colors mb-2">Dúvidas Frequentes</a>
-<a href="#localizacao" class="text-gray-400 hover:text-white transition-colors mb-2">Contato</a>
-</div>
-</div>
-
-<div class="flex flex-col md:flex-row justify-between items-center text-gray-500 text-xs md:text-sm">
-<p class="text-center md:text-left mb-4 md:mb-0">&copy; 2026 Anchor Marketing de Performance. Focados em ROI.</p>
-<div class="flex space-x-4">
-<a href="#" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-brand-500/20 hover:text-brand-400 transition-all"><i class="fa-brands fa-instagram"></i></a>
-<a href="#" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-brand-500/20 hover:text-brand-400 transition-all"><i class="fa-brands fa-linkedin-in"></i></a>
-</div>
-</div>
-</div>
-</footer>
-
-<!-- Botão Flutuante do WhatsApp Global -->
-<!-- TODO: ALtere o número 5511999999999 no href abaixo para o seu número real -->
-<a href="https://wa.me/5511955880197?text=Ol%C3%A1!%20Gostaria%20de%20falar%20sobre%20as%20estrat%C3%A9gias%20de%20marketing." target="_blank" class="fixed bottom-6 left-6 z-50 bg-[#25D366] hover:bg-[#20bd5a] text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-[0_0_15px_rgba(37,211,102,0.4)] transition-transform hover:scale-110 whatsapp-float" title="Fale conosco no WhatsApp">
-<i class="fa-brands fa-whatsapp"></i>
-</a>
-
-<!-- Scripts -->
-<script>
-// Navbar Scrolled Effect
-const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
-if (window.scrollY > 20) {
-navbar.classList.add('bg-[#050200]/90', 'backdrop-blur-md', 'border-b-white/5');
-navbar.classList.replace('py-0', 'py-1');
-} else {
-navbar.classList.remove('bg-[#050200]/90', 'backdrop-blur-md', 'border-b-white/5');
-navbar.classList.replace('py-1', 'py-0');
-}
-});
-
-// Mobile Menu Toggle
-const mobileBtn = document.getElementById('mobile-menu-btn');
-const mobileMenu = document.getElementById('mobile-menu');
-const menuIcon = mobileBtn.querySelector('i');
-
-mobileBtn.addEventListener('click', () => {
-mobileMenu.classList.toggle('hidden');
-if (mobileMenu.classList.contains('hidden')) {
-menuIcon.classList.replace('fa-xmark', 'fa-bars');
-} else {
-menuIcon.classList.replace('fa-bars', 'fa-xmark');
-}
-});
-
-mobileMenu.querySelectorAll('a').forEach(link => {
-link.addEventListener('click', () => {
-mobileMenu.classList.add('hidden');
-menuIcon.classList.replace('fa-xmark', 'fa-bars');
-});
-});
-
-// FAQ Accordion Logic
-const faqBtns = document.querySelectorAll('.faq-btn');
-
-faqBtns.forEach(btn => {
-btn.addEventListener('click', () => {
-const content = btn.nextElementSibling;
-const icon = btn.querySelector('i');
-const isOpen = content.classList.contains('open');
-
-// Fechar todos
-document.querySelectorAll('.faq-content').forEach(c => c.classList.remove('open'));
-document.querySelectorAll('.faq-btn i').forEach(i => {
-i.classList.remove('fa-minus', 'text-white');
-i.classList.add('fa-plus', 'text-brand-500');
-i.style.transform = 'rotate(0deg)';
-});
-
-// Se o clicado não estava aberto, abrir ele
-if (!isOpen) {
-content.classList.add('open');
-icon.classList.remove('fa-plus', 'text-brand-500');
-icon.classList.add('fa-minus', 'text-white');
-icon.style.transform = 'rotate(180deg)';
-}
-});
-});
-
-// ==========================================
-// LÓGICA DE ENVIO DO FORMULÁRIO PARA O WHATSAPP
-// ==========================================
-const contactForm = document.getElementById('contactForm');
-
-contactForm.addEventListener('submit', (e) => {
-e.preventDefault();
-
-// 1. Coletando os dados que o cliente digitou
-const nome = document.getElementById('nome').value;
-const email = document.getElementById('email').value;
-const telefone = document.getElementById('telefone').value;
-
-const investimentoSelect = document.getElementById('investimento');
-const investimentoText = investimentoSelect.options[investimentoSelect.selectedIndex].text;
-
-const mensagem = document.getElementById('mensagem').value;
-
-// 2. Montando a mensagem amigável que vai chegar no seu WhatsApp
-const textoWhatsApp = `Olá, equipe Anchor! ⚓\nGostaria de solicitar uma auditoria estratégica.\n\n*Meus Dados:*\n👤 *Nome/Empresa:* ${nome}\n📧 *E-mail:* ${email}\n📱 *WhatsApp:* ${telefone}\n💰 *Verba Mensal Ads:* ${investimentoText}\n\n🎯 *Nosso Desafio:* ${mensagem}`;
-
-// 3. Codificando o texto
-const textoCodificado = encodeURIComponent(textoWhatsApp);
-
-// 4. ATENÇÃO: NÚMERO DA AGÊNCIA (Substitua abaixo)
-const numeroDaAgencia = "5511955880197";
-
-// 5. URL final da API do WhatsApp
-const urlWhatsApp = `https://wa.me/${numeroDaAgencia}?text=${textoCodificado}`;
-
-// Efeito visual no botão antes de abrir o WhatsApp
-const btn = contactForm.querySelector('button[type="submit"]');
-const originalText = btn.innerHTML;
-
-btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin text-xl"></i> Redirecionando...';
-btn.classList.add('opacity-80', 'cursor-not-allowed');
-btn.disabled = true;
-
-setTimeout(() => {
-window.open(urlWhatsApp, '_blank');
-
-contactForm.reset();
-btn.innerHTML = originalText;
-btn.classList.remove('opacity-80', 'cursor-not-allowed');
-btn.disabled = false;
-}, 800);
-});
-</script>
+    <!-- Global WhatsApp Number (Change here) -->
+    <script>
+        const WA_NUMBER = "5511999999999"; // Substitua pelo número da ANCHOOR
+    </script>
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 md:h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <span class="font-display font-bold text-xl md:text-2xl tracking-tighter text-white flex items-center gap-1">
+                        ANCHOOR<span class="text-brand-500 text-2xl md:text-3xl leading-none">.</span>
+                    </span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="#solucao" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">A Solução</a>
+                    <a href="#servicos" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Serviços</a>
+                    <a href="#sobre" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Quem Somos</a>
+                    <a href="#depoimentos" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Depoimentos</a>
+                    <button onclick="openWhatsApp('Olá, vim pelo site da ANCHOOR e quero entender como vocês podem ajudar minha empresa.')" class="bg-white text-black hover:bg-brand-500 hover:text-white px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 shadow-[0_0_15px_rgba(255,255,255,0.1)] hover:shadow-[0_0_20px_rgba(249,115,22,0.4)]">
+                        Fale com a ANCHOOR
+                    </button>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="lg:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none p-2 -mr-2">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-[#0a0a0a]/95 backdrop-blur-xl border-b border-white/10 absolute w-full left-0 top-16 md:top-20 shadow-2xl">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="#solucao" class="block px-3 py-3.5 text-base font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors">A Solução</a>
+                <a href="#servicos" class="block px-3 py-3.5 text-base font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors">Serviços</a>
+                <a href="#sobre" class="block px-3 py-3.5 text-base font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors">Quem Somos</a>
+                <a href="#depoimentos" class="block px-3 py-3.5 text-base font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors">Depoimentos</a>
+                <button onclick="openWhatsApp('Olá, vim pelo site da ANCHOOR e quero entender como vocês podem ajudar minha empresa.')" class="w-full mt-4 bg-brand-500 text-white px-6 py-4 rounded-xl text-base font-bold text-center shadow-[0_0_15px_rgba(249,115,22,0.3)] hover:bg-brand-600 transition-colors">
+                    Fale com a ANCHOOR
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 1. HERO SECTION -->
+    <!-- Usando min-h-[100svh] para o mobile não cortar conteúdo na barra inferior do navegador -->
+    <section class="relative min-h-[100svh] md:min-h-screen flex items-center justify-center pt-28 pb-16 md:pt-20 md:pb-0 overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute inset-0 z-0">
+            <div class="absolute top-1/4 left-1/4 w-64 h-64 md:w-96 md:h-96 bg-brand-500/20 rounded-full mix-blend-screen filter blur-[80px] md:blur-[100px] animate-pulse"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-64 h-64 md:w-96 md:h-96 bg-brand-600/10 rounded-full mix-blend-screen filter blur-[80px] md:blur-[100px]"></div>
+            <!-- Grid Pattern -->
+            <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik02MCAwaC0xdjYwaDFWem0wIDYwSDB2LTFoNjB2MXoiIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNCIgZmlsbC1ydWxlPSJldmVub2RkIi8+Cjwvc3ZnPg==')] opacity-30"></div>
+            <!-- Gradient Overlay -->
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[#050505]/80 to-[#050505]"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center w-full">
+            
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm mb-6 md:mb-8 reveal">
+                <span class="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-brand-500 animate-pulse"></span>
+                <span class="text-[10px] md:text-xs font-semibold tracking-wider text-gray-300 uppercase">A nova era do seu negócio</span>
+            </div>
+
+            <!-- Ajuste fino de tamanhos de texto para não quebrar no mobile -->
+            <h1 class="font-display text-[2.5rem] leading-[1.05] sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white mb-5 md:mb-6 reveal delay-100 w-full">
+                Estratégia que transforma <br class="hidden sm:block"/>
+                marketing em <br class="block sm:hidden"/>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 to-orange-300 text-glow">crescimento real.</span>
+            </h1>
+            
+            <p class="max-w-2xl text-sm sm:text-base md:text-xl text-gray-400 mb-8 md:mb-10 font-light reveal delay-200 px-2">
+                A ANCHOOR ajuda empresas a saírem do marketing sem direção para uma estratégia clara, posicionamento forte e resultados mensuráveis.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto reveal delay-300 px-4 sm:px-0">
+                <button onclick="openWhatsApp('Olá, vim pelo site da ANCHOOR e quero entender como vocês podem ajudar minha empresa.')" class="group relative px-6 md:px-8 py-4 bg-brand-500 text-white rounded-full font-bold text-base md:text-lg overflow-hidden transition-all hover:scale-105 hover:shadow-[0_0_40px_rgba(249,115,22,0.4)] w-full sm:w-auto">
+                    <div class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></div>
+                    <span class="relative flex items-center justify-center gap-2">
+                        Fale com a ANCHOOR
+                        <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                    </span>
+                </button>
+            </div>
+
+            <!-- Floating Mockup / Dashboard Illusion -->
+            <div class="mt-12 md:mt-20 w-full max-w-5xl mx-auto relative reveal delay-300 animate-float px-2 sm:px-0">
+                <div class="absolute -inset-1 bg-gradient-to-r from-brand-500 to-orange-900 rounded-2xl blur opacity-20"></div>
+                <div class="relative bg-[#0a0a0a] border border-white/10 rounded-2xl p-1.5 md:p-2 shadow-2xl flex items-center justify-center overflow-hidden">
+                    <div class="w-full h-32 sm:h-48 md:h-80 bg-[#111] rounded-xl flex flex-col justify-between p-3 md:p-6 relative overflow-hidden">
+                        <!-- Decorative UI elements -->
+                        <div class="flex justify-between items-center border-b border-white/5 pb-2 md:pb-4">
+                            <div class="flex gap-1.5 md:gap-2">
+                                <div class="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-red-500/50"></div>
+                                <div class="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-yellow-500/50"></div>
+                                <div class="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-green-500/50"></div>
+                            </div>
+                            <div class="text-[8px] md:text-xs text-gray-500 font-mono hidden sm:block">anchoor_dashboard.exe</div>
+                            <div class="text-[8px] md:text-xs text-gray-500 font-mono sm:hidden">dashboard</div>
+                        </div>
+                        <div class="flex-1 flex items-end gap-1.5 md:gap-4 mt-4 md:mt-6">
+                            <div class="w-1/6 bg-white/5 rounded-t-md h-[30%] relative group"><div class="absolute inset-0 bg-brand-500/0 group-hover:bg-brand-500/20 transition-all"></div></div>
+                            <div class="w-1/6 bg-white/5 rounded-t-md h-[45%]"></div>
+                            <div class="w-1/6 bg-white/5 rounded-t-md h-[60%]"></div>
+                            <div class="w-1/6 bg-brand-500/20 rounded-t-md h-[80%] border-t border-brand-500 relative">
+                                <div class="absolute -top-5 md:-top-8 left-1/2 -translate-x-1/2 text-brand-500 text-[8px] md:text-xs font-bold">+184%</div>
+                            </div>
+                            <div class="w-1/6 bg-white/10 rounded-t-md h-[100%] shadow-[0_0_20px_rgba(249,115,22,0.2)] border-t border-brand-400"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-4 md:bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-50">
+            <span class="text-[9px] md:text-[10px] uppercase tracking-[0.2em] text-white">Scroll</span>
+            <div class="w-[1px] h-6 md:h-12 bg-gradient-to-b from-white to-transparent"></div>
+        </div>
+    </section>
+
+    <!-- 2. SEÇÃO DE DOR / PROBLEMA -->
+    <section id="solucao" class="relative py-16 md:py-32 bg-[#050505] overflow-hidden">
+        <div class="bg-glow-orange top-1/2 left-0 -translate-y-1/2 -translate-x-1/2 hidden lg:block"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-10 md:gap-16 items-center">
+                <div class="reveal text-left">
+                    <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-5 md:mb-6">
+                        A maioria das empresas investe em marketing e <span class="text-brand-500">não vê retorno.</span>
+                    </h2>
+                    <p class="text-lg md:text-2xl font-light text-gray-300 mb-5 md:mb-6 border-l-2 border-brand-500 pl-4 md:pl-6">
+                        Não por falta de dinheiro. <br/>
+                        <span class="font-medium text-white">Por falta de estratégia.</span>
+                    </p>
+                    <p class="text-gray-400 text-sm md:text-lg leading-relaxed">
+                        Posts sem direção, anúncios sem resultado, agências sem comprometimento. O mercado está cheio de soluções genéricas que não movem o ponteiro do seu faturamento. <br><br>
+                        <strong class="text-white font-medium">A ANCHOOR existe para mudar isso.</strong>
+                    </p>
+                </div>
+                
+                <div class="relative reveal delay-200 mt-10 lg:mt-0 px-2 sm:px-0">
+                    <div class="aspect-square rounded-full border border-white/5 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[280px] sm:max-w-md animate-[spin_60s_linear_infinite]"></div>
+                    <div class="aspect-square rounded-full border border-brand-500/20 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] max-w-[220px] sm:max-w-sm animate-[spin_40s_linear_infinite_reverse]"></div>
+                    
+                    <div class="glass-card rounded-2xl p-5 sm:p-6 md:p-8 relative z-10 mx-auto max-w-[320px] sm:max-w-sm backdrop-blur-xl">
+                        <div class="flex items-center gap-3 sm:gap-4 mb-5 md:mb-6 pb-5 md:pb-6 border-b border-white/10">
+                            <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-red-500/10 flex items-center justify-center text-red-500 shrink-0">
+                                <i data-lucide="trending-down" class="w-5 h-5 md:w-6 md:h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm md:text-lg">Modelo Tradicional</h4>
+                                <p class="text-xs md:text-sm text-gray-500">Custo sem métricas</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3 sm:gap-4">
+                            <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-brand-500/20 flex items-center justify-center text-brand-500 shrink-0">
+                                <i data-lucide="crosshair" class="w-5 h-5 md:w-6 md:h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm md:text-lg">Modelo ANCHOOR</h4>
+                                <p class="text-xs md:text-sm text-gray-500">Foco em conversão real</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. SEÇÃO DE SERVIÇOS -->
+    <section id="servicos" class="py-16 md:py-32 relative border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-left md:text-center mb-12 md:mb-20 reveal">
+                <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-3 md:mb-4">Nossas Soluções</h2>
+                <p class="text-gray-400 text-sm md:text-lg max-w-2xl mx-auto leading-relaxed">Metodologias validadas para estruturar, tracionar e escalar as vendas da sua empresa através do digital.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-5 md:gap-6">
+                <!-- Service 1 -->
+                <div class="glass-card p-6 md:p-8 rounded-2xl group reveal delay-100">
+                    <div class="w-10 h-10 md:w-14 md:h-14 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white mb-5 md:mb-8 group-hover:bg-brand-500 group-hover:text-white group-hover:border-brand-500 transition-all duration-300">
+                        <i data-lucide="search" class="w-5 h-5 md:w-6 md:h-6"></i>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold mb-2 md:mb-4 font-display">Diagnóstico Estratégico</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Uma análise profunda do posicionamento, comunicação e presença de mercado da sua empresa. Identificamos gargalos, oportunidades escondidas e entregamos um plano de ação claro.
+                    </p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="glass-card p-6 md:p-8 rounded-2xl group reveal delay-200">
+                    <div class="w-10 h-10 md:w-14 md:h-14 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white mb-5 md:mb-8 group-hover:bg-brand-500 group-hover:text-white group-hover:border-brand-500 transition-all duration-300">
+                        <i data-lucide="compass" class="w-5 h-5 md:w-6 md:h-6"></i>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold mb-2 md:mb-4 font-display">Consultoria de Marketing</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Acompanhamento estratégico contínuo para empresas que precisam de direção. Desenvolvemos estratégias alinhadas aos objetivos reais do negócio, com reuniões de alinhamento e metas claras.
+                    </p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="glass-card p-6 md:p-8 rounded-2xl group reveal delay-300 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                        <i data-lucide="rocket" class="w-20 h-20 md:w-32 md:h-32 text-brand-500"></i>
+                    </div>
+                    <div class="relative z-10">
+                        <div class="w-10 h-10 md:w-14 md:h-14 rounded-xl bg-brand-500/20 border border-brand-500/50 flex items-center justify-center text-brand-500 mb-5 md:mb-8 group-hover:bg-brand-500 group-hover:text-white transition-all duration-300 shadow-[0_0_15px_rgba(249,115,22,0.3)]">
+                            <i data-lucide="target" class="w-5 h-5 md:w-6 md:h-6"></i>
+                        </div>
+                        <h3 class="text-lg md:text-xl font-bold mb-2 md:mb-4 font-display text-white">Direção de Marketing</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            A ANCHOOR assume o marketing da sua empresa de ponta a ponta. Estratégia, planejamento, gestão de tráfego, design e execução sob nossa responsabilidade total.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. IMPACTO / IDENTIDADE -->
+    <section class="py-16 md:py-40 relative flex items-center justify-center overflow-hidden bg-black">
+        <!-- Dramatic Lighting -->
+        <div class="absolute inset-0 z-0">
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[250px] h-[250px] md:w-[800px] md:h-[800px] bg-brand-500/10 rounded-full blur-[60px] md:blur-[120px]"></div>
+        </div>
+        
+        <div class="relative z-10 text-center reveal px-4">
+            <h2 class="font-display font-black text-4xl sm:text-6xl md:text-9xl tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-white to-white/20 mb-2 md:mb-6 drop-shadow-2xl">
+                ANCHOOR<span class="text-brand-500">.</span>
+            </h2>
+            <p class="font-display text-lg md:text-4xl font-light text-white tracking-wide">
+                Estratégia que move empresas.
+            </p>
+        </div>
+    </section>
+
+    <!-- 5. QUEM SOMOS -->
+    <section id="sobre" class="py-16 md:py-32 relative border-t border-white/5 bg-[#050505]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-10 md:gap-16 items-center">
+                <div class="reveal text-left">
+                    <span class="text-brand-500 font-semibold tracking-wider text-xs md:text-sm uppercase mb-2 md:mb-4 block">Quem está por trás</span>
+                    <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6">
+                        A força motriz da ANCHOOR
+                    </h2>
+                    <p class="text-gray-400 text-sm md:text-lg mb-6 md:mb-8 leading-relaxed">
+                        Victor Temistocles e Kelvin Guerra criaram a ANCHOOR com uma convicção simples: <span class="text-white font-medium">marketing sem estratégia é dinheiro desperdiçado.</span> A agência nasceu para transformar posicionamento em crescimento real.
+                    </p>
+                    <div class="text-lg md:text-2xl font-display font-light border-l-2 border-brand-500 pl-4 md:pl-6 text-white mb-6 md:mb-10">
+                        Estratégia. Execução. <br class="block sm:hidden"><span class="text-brand-500 font-bold text-glow">Resultado.</span>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 md:gap-6 reveal delay-200">
+                    <!-- Founder 1 -->
+                    <div class="group relative overflow-hidden rounded-2xl glass-card aspect-[4/5] w-full max-w-[300px] mx-auto">
+                        <img src="Img/fotovitor.jpg" alt="Victor Temistocles" onerror="this.src='https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80'" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 grayscale group-hover:grayscale-0">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-5 md:p-6 w-full">
+                            <h4 class="font-display font-bold text-lg md:text-xl text-white">Victor Temistocles</h4>
+                            <p class="text-brand-500 text-xs md:text-sm font-medium">Co-fundador & Estratégia</p>
+                        </div>
+                    </div>
+                    <!-- Founder 2 -->
+                    <!-- Aplicação do translate apenas em desktop (sm) para manter o layout reto no mobile -->
+                    <div class="group relative overflow-hidden rounded-2xl glass-card aspect-[4/5] w-full max-w-[300px] mx-auto sm:translate-y-8 lg:translate-y-12">
+                        <img src="Img/fotokelvin.jpg" alt="Kelvin Guerra" onerror="this.src='https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80'" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 grayscale group-hover:grayscale-0">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-5 md:p-6 w-full">
+                            <h4 class="font-display font-bold text-lg md:text-xl text-white">Kelvin Guerra</h4>
+                            <p class="text-brand-500 text-xs md:text-sm font-medium">Co-fundador & Execução</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. DIFERENCIAIS -->
+    <section class="py-16 md:py-32 relative overflow-hidden">
+        <div class="absolute right-0 top-0 w-1/2 h-full bg-gradient-to-l from-brand-900/10 to-transparent pointer-events-none hidden md:block"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-8">
+                
+                <div class="glass-card p-6 md:p-10 rounded-2xl border-t border-t-brand-500/30 reveal">
+                    <div class="mb-4 md:mb-6 text-brand-500">
+                        <i data-lucide="brain-circuit" class="w-8 h-8 md:w-10 md:h-10"></i>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold font-display mb-2 md:mb-3 text-white">Estratégia antes da execução</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Não apertamos botões antes de entender o seu negócio. Todo movimento tático nasce de um planejamento sólido focado nos seus objetivos.</p>
+                </div>
+
+                <div class="glass-card p-6 md:p-10 rounded-2xl border-t border-t-brand-500/30 reveal delay-100">
+                    <div class="mb-4 md:mb-6 text-brand-500">
+                        <i data-lucide="bar-chart-3" class="w-8 h-8 md:w-10 md:h-10"></i>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold font-display mb-2 md:mb-3 text-white">Foco em resultado mensurável</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Esqueça métricas de vaidade. Nós trabalhamos orientados a dados que importam: leads qualificados, custo de aquisição e retorno sobre investimento.</p>
+                </div>
+
+                <div class="glass-card p-6 md:p-10 rounded-2xl border-t border-t-brand-500/30 reveal delay-200">
+                    <div class="mb-4 md:mb-6 text-brand-500">
+                        <i data-lucide="users" class="w-8 h-8 md:w-10 md:h-10"></i>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold font-display mb-2 md:mb-3 text-white">Atendimento próximo</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Você não é só mais um número. Mantemos uma comunicação transparente e constante, agindo como um braço interno da sua empresa.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. DEPOIMENTOS (SOCIAL PROOF) -->
+    <section id="depoimentos" class="py-16 md:py-32 relative border-t border-white/5 bg-[#050505]">
+        <!-- Subtle Glow Background -->
+        <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[600px] h-[400px] md:h-[600px] bg-brand-500/5 rounded-full blur-[80px] md:blur-[120px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-left md:text-center mb-12 md:mb-20 reveal">
+                <span class="text-brand-500 font-semibold tracking-wider text-xs md:text-sm uppercase mb-2 md:mb-3 block">Resultados Reais</span>
+                <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-3 md:mb-4">O que dizem nossos clientes</h2>
+                <p class="text-gray-400 text-sm md:text-lg max-w-2xl mx-auto leading-relaxed">Empresas que saíram do marketing genérico e construíram uma máquina de vendas previsível com a nossa direção.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-8">
+                <!-- Depoimento 1 -->
+                <div class="glass-card p-6 md:p-10 rounded-2xl relative group reveal delay-100 flex flex-col justify-between">
+                    <i data-lucide="quote" class="w-8 h-8 md:w-12 md:h-12 text-brand-500/10 absolute top-5 right-5 md:top-6 md:right-6 group-hover:text-brand-500/20 transition-colors"></i>
+                    <div>
+                        <div class="flex gap-1 mb-4 md:mb-6 text-brand-500">
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        </div>
+                        <p class="text-gray-300 text-sm md:text-base leading-relaxed mb-6 md:mb-8 relative z-10 font-light italic">
+                            "Antes da ANCHOOR, nosso marketing era apenas postar no Instagram sem estratégia. Eles mudaram completamente nosso posicionamento. O resultado? Dobramos nossa captação de leads qualificados em apenas 3 meses."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 md:gap-4 mt-auto">
+                        <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gradient-to-br from-brand-500 to-orange-900 flex items-center justify-center font-display font-bold text-sm md:text-lg border border-white/10 text-white shadow-lg shrink-0">ML</div>
+                        <div>
+                            <h4 class="font-bold text-white text-sm md:text-base">Marcelo Lima</h4>
+                            <p class="text-brand-500 text-xs md:text-xs font-medium">Sócio-Diretor, TechNova</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Depoimento 2 -->
+                <div class="glass-card p-6 md:p-10 rounded-2xl relative group reveal delay-200 flex flex-col justify-between">
+                    <i data-lucide="quote" class="w-8 h-8 md:w-12 md:h-12 text-brand-500/10 absolute top-5 right-5 md:top-6 md:right-6 group-hover:text-brand-500/20 transition-colors"></i>
+                    <div>
+                        <div class="flex gap-1 mb-4 md:mb-6 text-brand-500">
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        </div>
+                        <p class="text-gray-300 text-sm md:text-base leading-relaxed mb-6 md:mb-8 relative z-10 font-light italic">
+                            "Já havíamos passado por três agências diferentes. A diferença da ANCHOOR é que eles pensam no negócio como um todo. O foco não é curtida, é faturamento. Hoje temos previsibilidade de vendas e um ROI que faz sentido."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 md:gap-4 mt-auto">
+                        <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center font-display font-bold text-sm md:text-lg border border-white/10 text-white shadow-lg shrink-0">RF</div>
+                        <div>
+                            <h4 class="font-bold text-white text-sm md:text-base">Roberta Ferraz</h4>
+                            <p class="text-brand-500 text-xs md:text-xs font-medium">CEO, Clínicas Ferraz</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Depoimento 3 -->
+                <div class="glass-card p-6 md:p-10 rounded-2xl relative group reveal delay-300 flex flex-col justify-between border-t-brand-500/20">
+                    <div class="absolute inset-0 bg-gradient-to-b from-brand-500/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <i data-lucide="quote" class="w-8 h-8 md:w-12 md:h-12 text-brand-500/10 absolute top-5 right-5 md:top-6 md:right-6 group-hover:text-brand-500/20 transition-colors"></i>
+                    <div>
+                        <div class="flex gap-1 mb-4 md:mb-6 text-brand-500">
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        </div>
+                        <p class="text-gray-300 text-sm md:text-base leading-relaxed mb-6 md:mb-8 relative z-10 font-light italic">
+                            "Eles agem como um braço interno da nossa empresa. O diagnóstico inicial abriu nossos olhos para falhas de comunicação que estávamos cometendo há anos. A parceria com o Victor e o Kelvin foi o melhor investimento do ano."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 md:gap-4 mt-auto">
+                        <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gradient-to-br from-brand-500 to-orange-900 flex items-center justify-center font-display font-bold text-sm md:text-lg border border-white/10 text-white shadow-lg shrink-0">AS</div>
+                        <div>
+                            <h4 class="font-bold text-white text-sm md:text-base">André Silveira</h4>
+                            <p class="text-brand-500 text-xs md:text-xs font-medium">Fundador, Logística BR</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. CTA & FORMULÁRIO -->
+    <section class="py-16 md:py-32 relative bg-[#0a0a0a] border-t border-white/5">
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1557683316-973673baf926?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')] opacity-5 mix-blend-overlay bg-cover bg-center"></div>
+        <div class="bg-glow-orange bottom-0 right-0 translate-y-1/2 translate-x-1/3 hidden lg:block"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-10 md:gap-16">
+                <!-- Text CTA -->
+                <div class="reveal flex flex-col justify-center text-left">
+                    <h2 class="font-display text-3xl sm:text-5xl md:text-6xl font-bold leading-tight mb-4 md:mb-6 text-white">
+                        Pronto para <span class="text-brand-500 text-glow">ancorar</span> sua empresa no resultado?
+                    </h2>
+                    <p class="text-base sm:text-lg md:text-xl text-gray-400 mb-8 md:mb-10 font-light">
+                        Fale com a ANCHOOR agora e descubra a estratégia ideal para o crescimento do seu negócio.
+                    </p>
+                    
+                    <div class="flex justify-start">
+                        <button onclick="openWhatsApp('Olá, quero falar com a ANCHOOR sobre crescimento e estratégia para minha empresa.')" class="group relative px-6 md:px-8 py-4 bg-white text-black rounded-full font-bold text-sm sm:text-base md:text-lg overflow-hidden transition-all hover:shadow-[0_0_40px_rgba(255,255,255,0.3)] inline-flex items-center justify-center gap-3 w-full sm:w-auto">
+                            <span class="relative z-10">QUERO RESULTADO</span>
+                            <i data-lucide="arrow-right" class="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="mt-8 md:mt-12 flex items-center justify-start gap-3 text-xs md:text-sm text-gray-500">
+                        <i data-lucide="shield-check" class="text-brand-500 shrink-0"></i>
+                        <span>Suas informações estão seguras. Atendimento rápido e focado.</span>
+                    </div>
+                </div>
+
+                <!-- Smart Form -->
+                <div class="reveal delay-200">
+                    <div class="glass-card rounded-3xl p-5 sm:p-8 md:p-10 border border-brand-500/20 relative overflow-hidden">
+                        <!-- Decorative glow inside form -->
+                        <div class="absolute top-0 right-0 w-64 h-64 bg-brand-500/10 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
+                        
+                        <h3 class="text-lg md:text-2xl font-display font-bold mb-5 md:mb-6 text-white">Inicie sua jornada</h3>
+                        
+                        <form id="contactForm" class="space-y-4 relative z-10">
+                            <div>
+                                <label class="block text-xs md:text-sm font-medium text-gray-400 mb-1.5">Nome completo</label>
+                                <input type="text" id="nome" required class="w-full bg-black/50 text-white rounded-xl px-4 py-3 md:py-3.5 input-premium placeholder-gray-600 text-sm md:text-base" placeholder="Como devemos te chamar?">
+                            </div>
+                            
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs md:text-sm font-medium text-gray-400 mb-1.5">Empresa</label>
+                                    <input type="text" id="empresa" required class="w-full bg-black/50 text-white rounded-xl px-4 py-3 md:py-3.5 input-premium placeholder-gray-600 text-sm md:text-base" placeholder="Nome do negócio">
+                                </div>
+                                <div>
+                                    <label class="block text-xs md:text-sm font-medium text-gray-400 mb-1.5">WhatsApp</label>
+                                    <input type="tel" id="telefone" required class="w-full bg-black/50 text-white rounded-xl px-4 py-3 md:py-3.5 input-premium placeholder-gray-600 text-sm md:text-base" placeholder="(11) 99999-9999">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs md:text-sm font-medium text-gray-400 mb-1.5">Serviço de interesse</label>
+                                <select id="servico" required class="w-full bg-black/50 text-white rounded-xl px-4 py-3 md:py-3.5 input-premium appearance-none cursor-pointer text-sm md:text-base">
+                                    <option value="" disabled selected class="text-gray-600">Selecione uma opção</option>
+                                    <option value="Diagnóstico Estratégico">Diagnóstico Estratégico</option>
+                                    <option value="Consultoria de Marketing">Consultoria de Marketing</option>
+                                    <option value="Direção de Marketing">Direção de Marketing</option>
+                                    <option value="Outro assunto">Outro assunto</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs md:text-sm font-medium text-gray-400 mb-1.5">Mensagem (opcional)</label>
+                                <textarea id="mensagem" rows="3" class="w-full bg-black/50 text-white rounded-xl px-4 py-3 md:py-3.5 input-premium placeholder-gray-600 text-sm md:text-base" placeholder="Conte-nos um pouco sobre o momento da sua empresa..."></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full bg-brand-500 text-white rounded-xl px-4 py-3.5 md:py-4 font-bold text-sm md:text-lg hover:bg-brand-600 hover:shadow-[0_0_20px_rgba(249,115,22,0.4)] transition-all duration-300 mt-2 flex justify-center items-center gap-2">
+                                Enviar Mensagem
+                                <i data-lucide="send" class="w-4 h-4 md:w-5 md:h-5"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. FOOTER COM BOTÕES TRANSPARENTES -->
+    <footer class="py-10 md:py-16 relative z-10 border-t border-white/10 bg-[#050505]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
+            
+            <!-- Logo Footer -->
+            <div class="mb-6 md:mb-8">
+                <span class="font-display font-bold text-2xl md:text-3xl tracking-tighter text-white flex items-center gap-1 opacity-80 hover:opacity-100 transition-opacity">
+                    ANCHOOR<span class="text-brand-500 text-3xl md:text-4xl leading-none">.</span>
+                </span>
+            </div>
+
+            <!-- Botões Sociais Transparentes -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4 mb-8 md:mb-12 w-full sm:w-auto">
+                <!-- Instagram Transparent Button -->
+                <a href="https://instagram.com/sua_agencia" target="_blank" class="group flex items-center justify-center gap-3 w-full sm:w-auto px-6 md:px-8 py-3.5 rounded-full border border-white/10 bg-transparent text-gray-400 hover:text-white hover:border-brand-500 transition-all duration-300 hover:shadow-[0_0_20px_rgba(249,115,22,0.15)]">
+                    <i data-lucide="instagram" class="w-5 h-5 group-hover:scale-110 transition-transform text-brand-500"></i>
+                    <span class="text-xs md:text-sm font-medium tracking-wide">Siga no Instagram</span>
+                </a>
+
+                <!-- Email Transparent Button -->
+                <a href="mailto:contato@anchoor.com.br" class="group flex items-center justify-center gap-3 w-full sm:w-auto px-6 md:px-8 py-3.5 rounded-full border border-white/10 bg-transparent text-gray-400 hover:text-white hover:border-brand-500 transition-all duration-300 hover:shadow-[0_0_20px_rgba(249,115,22,0.15)]">
+                    <i data-lucide="mail" class="w-5 h-5 group-hover:scale-110 transition-transform text-brand-500"></i>
+                    <span class="text-xs md:text-sm font-medium tracking-wide">Envie um E-mail</span>
+                </a>
+            </div>
+
+            <!-- Copyright -->
+            <div class="text-center">
+                <p class="text-gray-500 text-[11px] md:text-sm">
+                    &copy; 2026 ANCHOOR. Todos os direitos reservados.
+                </p>
+                <p class="text-gray-600 text-[10px] md:text-xs mt-1 md:mt-2">
+                    Estratégia que transforma marketing em crescimento real.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS DE FUNCIONAMENTO -->
+    <script>
+        // Inicializar os ícones do Lucide
+        lucide.createIcons();
+
+        // Lógica do botão Mobile
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Fechar menu mobile ao clicar em um link
+        const menuLinks = menu.querySelectorAll('a, button');
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // Função para abrir o WhatsApp
+        function openWhatsApp(customMessage = null) {
+            const defaultMsg = "Olá, vim pelo site da ANCHOOR e quero entender como vocês podem ajudar minha empresa.";
+            const finalMsg = customMessage || defaultMsg;
+            window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(finalMsg)}`, '_blank');
+        }
+
+        // Lógica de envio do formulário redirecionando pro Whats
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Impede o recarregamento da página
+
+            const nome = document.getElementById('nome').value;
+            const empresa = document.getElementById('empresa').value;
+            const servico = document.getElementById('servico').value;
+            const mensagem = document.getElementById('mensagem').value;
+
+            // Constrói a mensagem personalizada
+            let texto = `*NOVO CONTATO VIA SITE*\n\n`;
+            texto += `*Nome:* ${nome}\n`;
+            texto += `*Empresa:* ${empresa}\n`;
+            texto += `*Interesse:* ${servico}\n`;
+            
+            if(mensagem) {
+                texto += `*Mensagem:* ${mensagem}\n`;
+            }
+
+            openWhatsApp(texto);
+        });
+
+        // Animação de Scroll (Revelar elementos na rolagem)
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 50; // Revela um pouco antes no mobile
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        // Chama uma vez para exibir os itens que já estão na tela ao carregar
+        reveal();
+    </script>
 </body>
 </html>
